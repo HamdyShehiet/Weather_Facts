@@ -2,9 +2,10 @@ import { Link } from "react-router-dom"
 
 function Header() {
     return (
-    <header className="sticky top-0 z-[10] py-6 bg-[--bg-color]">
+    <header className="sticky top-0 z-[10] py-4 bg-[--primary-clr] border-b-[1px] border-[#818181] border-solid">
         <div className="container mx-auto px-3 text-center">
-            <Link to="/" className="logo text-[clamp(25px,_5vw,_30px)] font-semibold text-[--white-color] ">Weather News</Link>
+            <Link onClick={()=>{console.log("dddd");
+            }} to="/" className="text-[clamp(25px,_5vw,_26px)] font-semibold text-white">Weather News</Link>
         </div>
     </header>
     )

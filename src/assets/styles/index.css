@@ -3,14 +3,23 @@
 @tailwind utilities;
 
 :root{
-    --bg-color: #1B262C ;
-    --dark-color : #000000 ;
-    --white-color : #ffffff ;
-    --menu-color : #3A5E72 ;
-    --btn-color: #5C93B1 ;
-    --hover-color : #dddddd ;
+    --primary-clr: #1B262C ;
+    --secondary-clr: #24353E ;
+    --darkslategray-clr : #3A5E72 ;
 }
 body{
     font-family: "Poppins", serif;
-    background-color: var(--bg-color);
+    background-color: var(--primary-clr);
+}
+.layout .container .weather-details .col{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 12px;
+    font-size: 18px;
+}
+.layout .container .weather-details .col>div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
