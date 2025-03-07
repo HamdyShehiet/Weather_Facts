@@ -4,11 +4,11 @@ import { LocationData } from "../../context/Data";
 function CurrentDetails(){
     const {data} = useContext(LocationData)
     const { location, current } = data ;
-    const localDate = new Date().toLocaleString("en-us",{
+    const localDate = new Date().toLocaleString("en-US",{
         weekday: "long",
         year: "numeric",
         month: "long",
-        day: "numeric"
+        day: "numeric",
     })
     return(
         <div className="current-details flex flex-col items-center lg:items-start gap-4 bg-transparent text-white">

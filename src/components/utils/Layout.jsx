@@ -1,10 +1,13 @@
 import MoreBtn from "./MoreBtn";
+import { useState } from "react";
 import MoreDetails from "./MoreDetails";
 import DaysForecast from "./DaysForecast";
 import CurrentDetails from "./CurrentDetails";
 import { LocationData } from "../../context/Data";
 
 function Layout({data}) {
+    const [viewMore, setViewMore] = useState(false)
+    const show = ()=> setViewMore(!viewMore); 
     return (
         <LocationData value={{data}}>
             <div className="grid gap-y-7">
@@ -12,8 +15,8 @@ function Layout({data}) {
                     <CurrentDetails />
                     <DaysForecast />
                 </div>
-                <MoreDetails />
-                <MoreBtn />
+                { viewMore && <MoreDetails/> }
+                <MoreBtn  onClick={show} viewMore={viewMore}/>
             </div>
         </LocationData>
     )

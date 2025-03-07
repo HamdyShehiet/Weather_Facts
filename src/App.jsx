@@ -20,16 +20,11 @@ function App() {
           const data = await response.json()
           setData(data)
         }
-
     }catch (error){
       setError("Error")
       setData("")
-      console.error("Error", error);
-
+      console.error("Error fetching products :", error);
     }
-    // finally {
-    //   console.log("Finally")
-    // }
   }
 
 return (
