@@ -13,7 +13,7 @@ function DaysForecast(){
                         return (
                         <div key={index} className="row relative flex items-center justify-between py-5 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:bg-white after:w-full after:translate-x-[-50%] after:h-[1px]">
                             <span>{new Date(dayInfo.date).toLocaleString("en-US",{weekday: "short",})}</span>
-                            <div className="inline-flex items-center gap-3">
+                            <div className="inline-flex items-center gap-1">
                                 <img src={dayInfo.day.condition.icon} width="35px" alt={`${dayInfo.day.condition.text} Status`} />
                                 <span>{dayInfo.day.condition.text}</span>
                             </div>
