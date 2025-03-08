@@ -14,15 +14,15 @@ function App() {
   async function getData(){
     try{
       const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=88a9fc86342d4d63a98185704230712&q=${location}&days=7&aqi=yes&alerts=yes`)
-        if(response.status !== 200 && !response.ok){
-          throw new Error("Network Is Not Good");
-        }else{
-          const data = await response.json()
-          setData(data)
+      if(response.status !== 200 && !response.ok){
+        throw new Error("Network Is Not Good");
+      }else{
+        const data = await response.json()
+        setData(data)
         }
     }catch (error){
       setError("Error")
-      setData("")
+      setData(null)
       console.error("Error fetching products :", error);
     }
   }
@@ -38,11 +38,7 @@ return (
     </section>
     <section className='layout pt-4 pb-7'>
       <div className="container min-h-[40vh] mx-auto px-3">
-        {
-          data ? <Layout data={data} />
-          : error !== "" ? <Error /> 
-          : <Welcome />
-        }
+        { data ? <Layout data={data} /> : error ? <Error /> : <Welcome /> }
       </div>
     </section>
   </main>
